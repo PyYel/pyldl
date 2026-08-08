@@ -17,7 +17,7 @@
 </p>
 
 
-# PyYel ML Ops
+# PyYel Deep Learning
 
 The PyYel Machine Learning Operations extension. This repository regroups tools to simplify and speed up Python AI solutions conception process.
 
