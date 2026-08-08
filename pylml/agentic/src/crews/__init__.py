@@ -1,3 +1,3 @@
 
 
-from .secops.crew import SecOpsCrew
+from .chatbot.crew import ChatbotCrew

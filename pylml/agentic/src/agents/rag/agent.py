@@ -9,10 +9,11 @@ class RAGAgent(Agent):
 
     def __init__(
         self,
-        api_host: str,
-        access_token: str,
-        corp_id: str,
+        db_host: str,
+        db_user: str,
+        db_password: str,
         mcp_urls: list[str] = [],
+        mcp_tokens: list[str] = [],
         **kwargs: Any,
     ) -> None:
 
@@ -22,10 +23,10 @@ class RAGAgent(Agent):
         ]
 
         mcps = []
-        for mcp_url in mcp_urls:
+        for mcp_url, mcp_token in zip(mcp_urls, mcp_tokens):
             hackuity_mcp = MCPServerHTTP(
                 url=mcp_url,
-                headers={"Authorization": f"Bearer {access_token}"},
+                headers={"Authorization": f"Bearer {mcp_token}"},
                 cache_tools_list=True,  # Optimization to prevent polling the server every single turn
             )
             mcps.append(hackuity_mcp)
