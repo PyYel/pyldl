@@ -3,6 +3,7 @@ import os, sys
 from abc import ABC, abstractmethod
 import shutil
 import psutil
+from typing import Optional, Union
 
 import torch
 from torch.utils.data import DataLoader
@@ -26,7 +27,7 @@ class LLM(ABC):
     """
     Base LLM class.
     """
-    def __init__(self, model_name: str, weights_path: str = None) -> None:
+    def __init__(self, model_name: str, weights_path: Optional[str] = None) -> None:
         """
         Initializes a LLM base class, and loads it from a local checkpoint or from HF using 
         the transformers API.
@@ -206,19 +207,23 @@ class LLM(ABC):
         self.tokenizer: AutoTokenizer = None
         self.model: AutoModel = None
         self.pipe: Pipeline = None
-        pass
+        raise NotImplementedError
 
     @abstractmethod
-    def evaluate_model(self, prompt: str, **kwargs):
-        pass
+    def evaluate_model(self, prompts: Union[str, list[str]], **kwargs):
+        raise NotImplementedError
+
+    @abstractmethod
+    def finetune(self):
+        raise NotImplementedError
 
     @abstractmethod
     def _postprocess(self):
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def _preprocess(self):
-        pass
+        raise NotImplementedError
 
 
     def save_output(self, string_data: str, save_path: str = None):

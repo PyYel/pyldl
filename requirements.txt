@@ -15,4 +15,7 @@ protobuf==5.28.2
 sentencepiece==0.2.0
 wheel==0.44.0 # nedded to install bitsandbytes
 bitsandbytes==0.44.1 # for quantification
+peft 
+trl 
+accelerate
 # pywin32 # For huggingface hub ssl certificate issue on windows os

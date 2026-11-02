@@ -4,6 +4,7 @@ __all__ = [
     "LLMInstructGenerationOPT",
     "LLMInstructGenerationPhi",
     "LLMInstructGenerationLlama3",
+    "LLMInstructGenerationQwen2",
 
     "LLMSummarizationBART",
     "LLMSummarizationPegasus",
@@ -22,6 +23,7 @@ from .src.LLMInstructGenerationMistral import LLMInstructGenerationMistral
 from .src.LLMInstructGenerationOPT import LLMInstructGenerationOPT
 from .src.LLMInstructGenerationPhi import LLMInstructGenerationPhi
 from .src.LLMInstructGenerationLlama3 import LLMInstructGenerationLlama3
+from .src.LLMInstructGenerationQwen2 import LLMInstructGenerationQwen2
 
 from .src.LLMSummarizationBART import LLMSummarizationBART
 from .src.LLMSummarizationPegasus import LLMSummarizationPegasus

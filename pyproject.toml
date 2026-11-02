@@ -12,14 +12,14 @@ authors = [
     { name="Maxime BLIDI", email="blidi.maxime@gmail.com" }
 ]
 dependencies = [
-    "numpy<2",
+    "numpy",
     "pandas",
     "opencv-python",
-    "python-dotenv==1.0.1",
+    "python-dotenv>=1.0.0",
     "tqdm",
     "scikit-learn",
     "matplotlib",
-    "torch==2.4.1",
+    "torch",
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -35,6 +35,8 @@ llm = [
     "protobuf==5.28.2",
     "sentencepiece==0.2.0",
     "bitsandbytes==0.44.1",
+    "peft",
+    "trl",
 ]
 cnn = [
     "torchvision"
